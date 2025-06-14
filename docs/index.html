@@ -2,6 +2,9 @@
 <html lang="es">
 
 <head>
+    <!-- Supabase client -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+    <script type="module" src="js/mostrarJugadores.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UD Tokaleda</title>
@@ -46,24 +49,19 @@
     </section>
 
     <!-- Sección: Estadísticas -->
-    <section id="estadisticas " class="py-12 px-4 bg-gray-50 ">
-        <div class="max-w-4xl mx-auto ">
-            <h2 class="text-2xl font-bold mb-6 ">Estadísticas de Jugadores</h2>
-            <table class="w-full text-left border ">
+    <section id="estadisticas" class="py-12 px-4 bg-gray-50">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-2xl font-bold mb-6">Estadísticas de Jugadores</h2>
+            <table class="w-full text-left border">
                 <thead>
-                    <tr class="bg-pink-700 text-white ">
-                        <th class="p-2 ">Jugador</th>
-                        <th class="p-2 ">Goles</th>
-                        <th class="p-2 ">Asistencias</th>
+                    <tr class="bg-pink-700 text-white">
+                        <th class="p-2">Jugador</th>
+                        <th class="p-2">Goles</th>
+                        <th class="p-2">Asistencias</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr class="border-t ">
-                        <td class="p-2 ">Gospro</td>
-                        <td class="p-2 ">2</td>
-                        <td class="p-2 ">1</td>
-                    </tr>
-                    <!-- Más jugadores -->
+                <tbody id="tabla-jugadores">
+                    <!-- Los jugadores se cargarán aquí dinámicamente -->
                 </tbody>
             </table>
         </div>
@@ -78,9 +76,7 @@
                     <img src="img/camiseta.png " alt="Camiseta " class="w-full h-78 object-cover mb-2 " />
                     <h3 class="text-lg font-semibold ">Camiseta 2025</h3>
                     <p>15,00 €</p>
-                    <button class="mt-2 bg-pink-700 text-white px-4 py-2 rounded hover:bg-green-800 ">
-            Comprar
-          </button>
+                    <button class="mt-2 bg-pink-700 text-white px-4 py-2 rounded hover:bg-pink-800 ">Comprar</button>
                 </div>
                 <!-- Más productos -->
             </div>
